@@ -1,4 +1,16 @@
+#!make
+include .env
+export $(shell sed 's/=.*//' .env)
+
 .PHONY: deploy
+
+test : 
+	env
+
+deployResolver:
+	@echo "Deploying the IraResolver contract..."
+	forge script script/DeployIraResolver.s.sol:DeployIraResolver --broadcast --fork-url $(RPC_URL) --private-key $(PRIVATE_KEY) --legacy
+
 
 deploySchemaRegistrar:
 	@echo "Deploying the SchemaRegistrar contract..."

@@ -4,11 +4,11 @@ pragma solidity 0.8.26;
 
 import {ISchemaRegistry} from "eas-contracts/ISchemaRegistry.sol";
 import {ISchemaResolver} from "eas-contracts/resolver/ISchemaResolver.sol";
-import {SchemaRegistered} from "./SchemaRegistratEvents.sol";
+import {SchemaRegistered} from "./IraSchemaRegistratEvents.sol";
 
 /// @title SchemaRegistrar
 /// @notice Schema Registration Example
-contract SchemaRegistrar {
+contract IraSchemaRegistrar {
     error InvalidSchemaRegistry();
     error InvalidSchema();
     error InvalidResolver();
