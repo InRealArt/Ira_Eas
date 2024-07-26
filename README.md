@@ -1,10 +1,37 @@
 ## InRealArt Ethereum Attestation Service
 
-### Register a Schema
+
+
+### Register a Schema
+
+Execute the command : 
+
+```sh
+make registerSchema
+```
 
 ## Deployments
 
-Please note that you can also import and use the addresses directly in your code using the `@ethereum-attestation-service/eas-contracts/deployments` deployment artifacts corresponding to your desired network.
+
+### Deploy a custom resolver 
+
+Execute the command : 
+
+```sh
+make deployResolver
+```
+
+### Deploy a custom registry
+
+Execute the command : 
+
+```sh
+make deploySchemaRegistrar
+```
+
+All the addresses below are using the official addresses of EAS.<br>
+`@ethereum-attestation-service/eas-contracts/deployments` 
+
 
 ### Testnets
 
@@ -14,17 +41,15 @@ Please note that you can also import and use the addresses directly in your code
   - Contract: [0x13b85781B0773f6f43628cFcc83DD9d105f6C4B9](https://sepolia.etherscan.io/address/0x13b85781B0773f6f43628cFcc83DD9d105f6C4B9)
   - Deployment and ABI:
 - **SchemaRegistry**:
-  - Contract:
+  - Contract: [0xC8847Bae1Dd2Aa418990fB7f73Bb6379A73Ff46A](https://sepolia.etherscan.io/address/0xC8847Bae1Dd2Aa418990fB7f73Bb6379A73Ff46A)
   - Deployment and ABI:
 
 ### Mainnets
 
 #### Ethereum
 
-Version 0.26:
-
 - **Resolver**:
-  - Contract: 0xA1207F3BBa224E2c9c3c6D5aF63D0eb1582Ce587)
+  - Contract: 
   - Deployment and ABI:
 - **SchemaRegistry**:
   - Contract:

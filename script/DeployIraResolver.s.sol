@@ -5,6 +5,7 @@ import {Script, console} from "forge-std/Script.sol";
 import {IraResolver} from "../src/IraResolver.sol";
 import {ISchemaRegistry} from "eas-contracts/ISchemaRegistry.sol";
 import { IEAS } from "eas-contracts/IEAS.sol";
+import {SEPOLIA_CHAIN_ID, SEPOLIA_OFFICIAL_EAS_ADDRESS} from "./lib/DeployConstants.sol";
 
 contract DeployIraResolver is Script {
 
@@ -13,10 +14,10 @@ contract DeployIraResolver is Script {
 
     function setUp() public {
         // Sepolia 
-        easAddresses[11155111] = 0xC2679fBD37d54388Ce493F1DB75320D236e1815e;
-        attesterAddresses[11155111] = 0xCB23DeF95E386Bd5e8102ad53fc98B7e23416Fa4;
+        easAddresses[SEPOLIA_CHAIN_ID] = SEPOLIA_OFFICIAL_EAS_ADDRESS;
+        attesterAddresses[SEPOLIA_CHAIN_ID] = 0xCB23DeF95E386Bd5e8102ad53fc98B7e23416Fa4;
         // Mainnet
-        //easAddresses[11155111] = 0xC2679fBD37d54388Ce493F1DB75320D236e1815e;
+        //easAddresses[1] = 0xC2679fBD37d54388Ce493F1DB75320D236e1815e;
     }
 
     function run() public returns (IraResolver){

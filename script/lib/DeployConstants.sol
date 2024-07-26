@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.26;
+
+// CHAIN ID 
+// Ethereum blockchain
+uint32 constant SEPOLIA_CHAIN_ID = 11155111;
+uint32 constant ETH_MAINNET_CHAIN_ID = 1;
+
+
+// ADDRESSES
+// EAS
+address constant SEPOLIA_OFFICIAL_EAS_ADDRESS = 0xC2679fBD37d54388Ce493F1DB75320D236e1815e;
+
+
+// REGISTRY
+address constant SEPOLIA_OFFICIAL_REGISTRY_ADDRESS = 0x0a7E2Ff54e76B8E6659aedc9103FB21c038050D0;
+

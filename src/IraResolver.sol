@@ -5,7 +5,7 @@ import { IEAS, Attestation } from "eas-contracts/IEAS.sol";
 import {Ownable} from "openzeppelin-contracts/contracts/access/Ownable.sol";
 
 /// @title IraResolver
-/// @notice A schema resolver that checks whether the attestation is from a specific attester.
+/// @notice A schema resolver that checks whether the attestation is from a specific attester that is in the whitelist of IRA attesters.
 contract IraResolver is SchemaResolver, Ownable {
 
     address[] private s_attesters;

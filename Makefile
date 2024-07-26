@@ -2,6 +2,9 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
+IRA_SCHEMA_REGISTRY_ADDRESS=0xC8847Bae1Dd2Aa418990fB7f73Bb6379A73Ff46A
+IRA_RESOLVER_ADDRESS=0x13b85781B0773f6f43628cFcc83DD9d105f6C4B9
+
 .PHONY: deploy
 
 test : 
@@ -14,8 +17,8 @@ deployResolver:
 
 deploySchemaRegistrar:
 	@echo "Deploying the SchemaRegistrar contract..."
-	forge script script/DeploySchemaRegistrar.s.sol:DeploySchemaRegistrar --broadcast --rpc-url $(RPC_URL) --private-key $(PRIVATE_KEY)
+	forge script script/DeployIraSchemaRegistrar.s.sol:DeployIraSchemaRegistrar --broadcast --fork-url $(RPC_URL) --private-key $(PRIVATE_KEY) --legacy
 
 registerSchema: 
 	@echo "Register schema..."
-	cast call 0xEdDa4460fCCF59420D18fD580738BcAa30d31D02 "allowance(address,address)" 0xB63cE207B985e8508b17B5e8CF3900EF22C4e444 0xa546D99E5DE183CC0057CaeD71D5DFf03580B2c3 --rpc-url $SEPOLIA_RPC_URL
+	cast send $(IRA_SCHEMA_REGISTRY_ADDRESS) "register(string,address,bool)" "string IraCertificate" $(IRA_RESOLVER_ADDRESS) true --rpc-url $(RPC_URL) --private-key $(PRIVATE_KEY) --legacy

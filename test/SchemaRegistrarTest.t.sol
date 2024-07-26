@@ -10,11 +10,8 @@ contract SchemaRegistrarTest is Test {
         
     }
 
-    function test_Increment() public {
+    function test1() public {
         
     }
 
-    function testFuzz_SetNumber(uint256 x) public {
-        
-    }
 }
