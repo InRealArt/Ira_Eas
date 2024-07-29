@@ -10,12 +10,13 @@ contract DeployIraSchemaRegistrar is Script {
 
     mapping (uint chainId => address registryAddress) registryAddresses;
 
-    function setUp() public {
+    function setUp() internal {
         // Sepolia 
         registryAddresses[SEPOLIA_CHAIN_ID] = SEPOLIA_OFFICIAL_REGISTRY_ADDRESS;
     }
 
     function run() public returns (IraSchemaRegistrar){
+        setUp();
         vm.startBroadcast();
         uint256 chainId = block.chainid;
         IraSchemaRegistrar schemaRegistrar = new IraSchemaRegistrar(ISchemaRegistry(registryAddresses[chainId]));

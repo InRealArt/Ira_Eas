@@ -1,6 +1,18 @@
 ## InRealArt Ethereum Attestation Service
 
+## Tests
 
+Execute the command : 
+
+```sh
+source .env
+```
+
+Then :
+
+```sh
+forge test --fork-url $RPC_URL
+```
 
 ### Register a Schema
 
